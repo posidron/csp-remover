@@ -1,0 +1,27 @@
+{
+  "name": "CSP Remover",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Demonstration of removing CSP headers from all websites",
+  "permissions": [
+    "declarativeNetRequest",
+    "webRequest",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+
